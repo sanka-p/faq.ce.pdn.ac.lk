@@ -77,3 +77,68 @@ ul li {
 .btn-course {
   margin-bottom: 6px;
 }
+
+/* Code block with copy button styling */
+.code-wrapper {
+  position: relative;
+  margin: 20px 0;
+}
+
+.code-wrapper pre {
+  margin-bottom: 0;
+}
+
+.btn-copy-code {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.btn-copy-code:hover {
+  opacity: 1;
+}
+
+/* Server card hover effects */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Improve button accessibility with focus styles */
+.btn:focus,
+button:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+/* Responsive spacing for mobile */
+@media (max-width: 768px) {
+  .code-wrapper {
+    margin: 10px 0;
+  }
+  
+  .btn-copy-code {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Alert improvements */
+.alert {
+  border-left: 4px solid;
+}
+
+.alert-info {
+  border-left-color: #0dcaf0;
+}
+
+.alert-secondary {
+  border-left-color: #6c757d;
+}

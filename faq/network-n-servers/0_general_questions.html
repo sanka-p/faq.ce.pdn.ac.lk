@@ -10,26 +10,26 @@ author : Nuwan
 <!--EXPAND ALL BUTTON ON TOP RIGHT CORNER
 Later add to template-->
 <p style="text-align:right">
-    <button type="button" class="btn btn-dark btn-expand-all">EXPAND ALL</button>
+    <button type="button" class="btn btn-dark btn-expand-all" aria-label="Expand or collapse all FAQ sections">EXPAND ALL</button>
 </p>
 
 <!-- 1 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
-        aria-expanded="false" aria-controls="collapseExample">
-        How to keep a program running even when I disconnect the remote terminal?
+        aria-expanded="false" aria-controls="collapse1" aria-label="Show how to keep a program running when disconnecting">
+        How to keep a program running even when I disconnect from the remote terminal?
     </button>
 </p>
 <div class="collapse multi-collapse" id="collapse1">
     <div class="card card-body">
-        <p>Read <a href="https://www.maketecheasier.com/nohup-and-uses/">this</a> article.</p>
+        <p>Use <a href="https://www.maketecheasier.com/nohup-and-uses/" target="_blank" rel="noopener">nohup</a> or <a href="https://github.com/tmux/tmux/wiki/Getting-Started" target="_blank" rel="noopener">tmux</a></p>
     </div>
 </div>
 
 <!-- 2 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse2" aria-label="Show how to install python packages">
         How can I install python packages?
     </button>
 </p>
@@ -63,13 +63,13 @@ source ~/.bashrc
 <!-- 3 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse3" aria-label="Show how to change the gcc or g++ version">
         How can I change the gcc or g++ version?
     </button>
 </p>
 <div class="collapse multi-collapse" id="collapse3">
     <div class="card card-body">
-        <p>Method 1: Please contact the <a href="https://cepdnaclk.github.io/servers/admin/">admin</a> and request them
+        <p>Method 1: Please contact the <a href="../contact-network-admin/">admin</a> and request them
             run update-alternatives as documented <a
                 href="https://github.com/cepdnaclk/server-documentation-public">here</a>.</p>
 
@@ -90,21 +90,21 @@ gcc -v #Now you get the gcc-8 when you run gcc command
 <!-- 4 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse4" aria-label="Show which server is more suitable for my work">
         Which server is more suitable for my work?
     </button>
 </p>
 <div class="collapse multi-collapse" id="collapse4">
     <div class="card card-body">
-        If you are working on a heavy CPU bound computation, use Aiken. Kepler would be suitable if you are working on
-        deep learning because of better GPUs and ready made datasets on the server.
+        If you are working on heavy CPU-bound computations, use an <a href="../#hpc-servers">HPC server</a>. 
+        For deep learning workflows, use a <a href="../#gpu-servers">GPU server</a> which provides better GPUs and ready-made datasets.
     </div>
 </div>
 
 <!-- 5 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse5" aria-label="Show how to conveniently run experiments on the server and remotely monitor them">
         How can I conviniently run experiments on the server and remotely monitor them?
     </button>
 </p>
@@ -120,7 +120,7 @@ gcc -v #Now you get the gcc-8 when you run gcc command
 <!-- 6 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse6" aria-label="Show how to install and use conda on Peradeniya servers without sudo accounts">
         How to install and use conda (Anaconda or Miniconda) on Peradeniya servers without sudo accounts
     </button>
 </p>
@@ -232,7 +232,7 @@ gcc -v #Now you get the gcc-8 when you run gcc command
                 If you have any questions, you can reach out to the following people. <br>
                 
                 <ul>
-                    <li> <a href="https://faq.ce.pdn.ac.lk/network-n-servers/contact-network-admin/"><b>CO</b> Tesla/Kepler/Aiken/Turing</a></li>
+                    <li> <a href="../contact-network-admin/"><b>CO</b> Tesla/Kepler/Aiken/Turing</a></li>
                     <li><a href="https://github.com/eepdnaclk/server/tree/main/admin"><b>EE</b> COVID server</a></li>
                 </ul>
             </li>
@@ -250,7 +250,7 @@ gcc -v #Now you get the gcc-8 when you run gcc command
 <!-- 7 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapse7" aria-label="Show how to request and manage project storage on Peradeniya Servers">
         Requesting/managing project storage on Peradeniya Servers
     </button>
 </p>
@@ -302,5 +302,335 @@ gcc -v #Now you get the gcc-8 when you run gcc command
                 </li>
             </ul>
         </p>
+    </div>
+</div>
+
+<!-- 8 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8"
+        aria-expanded="false" aria-controls="collapse8" aria-label="Show how to use VS Code Remote SSH development on servers">
+        How to use VS Code Remote SSH development on servers with jump host?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse8">
+    <div class="card card-body">
+        <p>You can develop on Kepler/Turing servers using VS Code's Remote SSH extension with the jump host configuration.</p>
+        
+        <ol>
+            <li>
+                Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh" target="_blank" rel="noopener">Remote - SSH extension</a> in VS Code.
+            </li>
+            <li>
+                Configure your local SSH config file (<code>~/.ssh/config</code> on Linux/Mac or <code>C:\Users\YourUsername\.ssh\config</code> on Windows):
+                <pre><code>Host aiken
+    HostName aiken.ce.pdn.ac.lk
+    User YOUR_USERNAME
+
+Host tesla
+    HostName tesla.ce.pdn.ac.lk
+    User YOUR_USERNAME
+
+Host kepler
+    HostName 10.8.0.11
+    User YOUR_USERNAME
+    ProxyCommand ssh -W %h:%p aiken
+
+Host turing
+    HostName 10.8.0.14
+    User YOUR_USERNAME
+    ProxyCommand ssh -W %h:%p aiken</code></pre>
+                Replace <code>YOUR_USERNAME</code> with your actual username (e.g., e16123).
+            </li>
+            <li>
+                In VS Code, press <kbd>F1</kbd> or <kbd>Ctrl+Shift+P</kbd> and type "Remote-SSH: Connect to Host"
+            </li>
+            <li>
+                Select either <code>kepler</code> or <code>turing</code> from the list
+            </li>
+            <li>
+                Once connected, you can install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance" target="_blank" rel="noopener">Pylance extension</a> on the remote server for Python code completion and select the correct conda environment for your project.
+            </li>
+        </ol>
+
+        <p><strong>Additional Resources:</strong></p>
+        <ul>
+            <li><a href="https://www.doc.ic.ac.uk/~nuric/coding/how-to-setup-vs-code-remote-ssh-with-a-jump-host.html" target="_blank" rel="noopener">Detailed guide on VS Code Remote SSH with jump host</a></li>
+            <li><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">Official VS Code Remote SSH documentation</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 9 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9"
+        aria-expanded="false" aria-controls="collapse9" aria-label="Show how to access servers using MobaXterm">
+        How to access the servers using MobaXterm (Windows)?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse9">
+    <div class="card card-body">
+        <p>MobaXterm is a popular SSH client for Windows that provides both terminal access and file transfer capabilities.</p>
+        
+        <ol>
+            <li>
+                Download and install <a href="https://mobaxterm.mobatek.net/download.html" target="_blank" rel="noopener">MobaXterm</a>
+            </li>
+            <li>
+                To connect to internal servers (Kepler/Turing), you need to use the jump host feature:
+                <ul>
+                    <li>Click on "Session" → "SSH"</li>
+                    <li><strong>Remote host:</strong> Enter the internal IP (e.g., <code>10.8.0.11</code> for Kepler or <code>10.8.0.14</code> for Turing)</li>
+                    <li><strong>Username:</strong> Your username (e.g., e16123)</li>
+                    <li>Go to the "Network settings" tab</li>
+                    <li>Check "Connect through SSH gateway (jump host)"</li>
+                    <li><strong>Gateway SSH server:</strong> <code>aiken.ce.pdn.ac.lk</code> (or <code>tesla.ce.pdn.ac.lk</code>)</li>
+                    <li><strong>Gateway username:</strong> Your username (same as above)</li>
+                    <li>Click OK to save and connect</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><strong>Note:</strong> In this setup, Aiken/Tesla acts as the jump host (public IP server) to access Kepler/Turing (internal IP servers).</p>
+
+        <p><strong>Additional Resources:</strong></p>
+        <ul>
+            <li><a href="https://stackoverflow.com/questions/69526837/mobaxterm-connect-through-ssh-gateway-jump-host-gives-error-as-remote-side-u" target="_blank" rel="noopener">Troubleshooting MobaXterm jump host connections</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 10 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10"
+        aria-expanded="false" aria-controls="collapse10" aria-label="Show PyTorch and TensorFlow version compatibility">
+        Which PyTorch/TensorFlow versions should I use on the servers?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse10">
+    <div class="card card-body">
+        <p>The choice of PyTorch or TensorFlow version depends on the CUDA version installed on each server. Using incompatible versions may result in GPU errors or degraded performance.</p>
+        
+        <p><strong>Recommended approach:</strong></p>
+        <ol>
+            <li>Check the CUDA version on your target server:
+                <pre><code>nvidia-smi</code></pre>
+                Look for the "CUDA Version" in the top right corner of the output.
+            </li>
+            <li>Refer to the compatibility guide for version recommendations:
+                <ul>
+                    <li><a href="https://docs.google.com/document/d/11M6KMTmJL7SXe5x-m-4kkEwASXwkZIa8SxNeYeWX81c/edit?usp=sharing" target="_blank" rel="noopener">PyTorch/TensorFlow versions for Peradeniya servers</a></li>
+                    <li><a href="https://pytorch.org/get-started/previous-versions/" target="_blank" rel="noopener">PyTorch CUDA compatibility matrix</a></li>
+                    <li><a href="https://www.tensorflow.org/install/source#gpu" target="_blank" rel="noopener">TensorFlow CUDA compatibility table</a></li>
+                </ul>
+            </li>
+            <li>Install using conda in your environment:
+                <pre><code># Example for PyTorch with CUDA 11.8
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Example for TensorFlow with CUDA 11.8
+conda install -c conda-forge cudatoolkit=11.8
+pip install tensorflow==2.12.0</code></pre>
+            </li>
+        </ol>
+
+        <p><strong>Tip:</strong> Always test your installation with a simple GPU test after installing:</p>
+        <pre><code># For PyTorch
+python -c "import torch; print(torch.cuda.is_available())"
+
+# For TensorFlow
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"</code></pre>
+    </div>
+</div>
+
+<!-- 11 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11"
+        aria-expanded="false" aria-controls="collapse11" aria-label="Show how to use Singularity containers">
+        How to use Singularity containers on the servers?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse11">
+    <div class="card card-body">
+        <p>Singularity containers allow you to package your entire development environment (including specific library versions, dependencies, etc.) and run it consistently across different servers.</p>
+        
+        <p><strong>Getting Started:</strong></p>
+        <ul>
+            <li>For documentation and examples: <a href="https://github.com/cepdnaclk/singularity-deployment" target="_blank" rel="noopener">Singularity Deployment Repository</a></li>
+            <li>For help with Singularity containers, contact:
+                <ul>
+                    <li>Kalindu - <a href="https://people.ce.pdn.ac.lk/students/e19/446/" target="_blank" rel="noopener">e19/446</a></li>
+                    <li>Sashini - <a href="https://people.ce.pdn.ac.lk/students/e17/190/" target="_blank" rel="noopener">e17/190</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><strong>When to use Singularity:</strong></p>
+        <ul>
+            <li>When you need a specific version of libraries that conflicts with system versions</li>
+            <li>When you want to ensure reproducibility across different servers</li>
+            <li>When you need root-like privileges for specific software installations</li>
+            <li>When you want to share your exact environment with collaborators</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 12 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12"
+        aria-expanded="false" aria-controls="collapse12" aria-label="Show server monitoring and statistics">
+        Where can I check server availability and usage statistics?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse12">
+    <div class="card card-body">
+        <p>Before starting resource-intensive tasks, you can check the current server load and availability:</p>
+        
+        <p><strong>Real-time Monitoring:</strong></p>
+        <ul>
+            <li>
+                <strong>GPU Utilization:</strong> 
+                <a href="https://cepdnaclk.github.io/maintenance/reports/server-gpu-util/plots/" target="_blank" rel="noopener">Server GPU Statistics</a>
+                <br>Shows GPU usage, memory consumption, and which users are currently using GPUs on each server.
+            </li>
+            <li>
+                <strong>Storage Utilization:</strong> 
+                <a href="https://cepdnaclk.github.io/maintenance/reports/server-storage-util/" target="_blank" rel="noopener">Server Storage Statistics</a>
+                <br>Shows storage usage across different servers and project folders.
+            </li>
+        </ul>
+
+        <p><strong>On the server itself:</strong></p>
+        <pre><code># Check GPU usage and availability
+nvidia-smi
+
+# Check CPU and memory usage
+htop
+
+# Check disk usage
+df -h</code></pre>
+
+        <p><strong>Server Configuration:</strong></p>
+        <p>For information about server groups, folders, and datasets (requires @eng.pdn.ac.lk Google account):</p>
+        <ul>
+            <li><a href="https://docs.google.com/spreadsheets/d/1f8G_oQVhBhKbaI_rw_gcaFTY4OFbP6T7RiUE66l-dvU/edit?usp=sharing" target="_blank" rel="noopener">Turing Server Configuration</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1qyCokp9XNO9tOghKgX-2SNlR_Gaif1EEOa_mu7_nMOo/edit?usp=sharing" target="_blank" rel="noopener">Kepler Server Configuration</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1a38wWxu7uycSHrXBvwLubW-54BFo4IRTa255WodvLWc/edit?usp=sharing" target="_blank" rel="noopener">Aiken Server Configuration</a></li>
+        </ul>
+
+        <p><strong>Monitoring Source Code:</strong> <a href="https://github.com/cepdnaclk/maintenance" target="_blank" rel="noopener">GitHub - cepdnaclk/maintenance</a></p>
+    </div>
+</div>
+
+<!-- 13 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13"
+        aria-expanded="false" aria-controls="collapse13" aria-label="Show how to connect to internal IP servers">
+        How can I connect to internal IP servers (Kepler, Turing, Ampere)?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse13">
+    <div class="card card-body">
+        <p>Internal IP servers (Kepler, Turing, Ampere, Ada) are not directly accessible from outside the university network. You have several options:</p>
+        
+        <p><strong>Option 1: Use a Jump Host (Recommended)</strong></p>
+        <p>SSH to a public IP server first (Aiken or Tesla), then SSH to the internal server:</p>
+        <pre><code># First, connect to Aiken (public IP)
+ssh your_username@aiken.ce.pdn.ac.lk
+
+# Then from Aiken, connect to the internal server
+ssh your_username@kepler.ce.pdn.ac.lk
+# OR
+ssh your_username@turing.ce.pdn.ac.lk
+# OR
+ssh your_username@ampere.ce.pdn.ac.lk</code></pre>
+
+        <p><strong>Option 2: Direct SSH with ProxyJump (Single Command)</strong></p>
+        <p>Configure your <code>~/.ssh/config</code> file as shown in the <a href="#collapse8" data-bs-toggle="collapse">VS Code Remote SSH</a> section above, then connect directly:</p>
+        <pre><code>ssh kepler   # Uses aiken as jump host automatically</code></pre>
+
+        <p><strong>Option 3: Connect from Peradeniya Network</strong></p>
+        <p>If you're on a computer within the university network, you can connect directly:</p>
+        <pre><code>ssh your_username@kepler.ce.pdn.ac.lk</code></pre>
+
+        <p><strong>Server Internal IPs:</strong></p>
+        <ul>
+            <li>Kepler: <code>10.40.18.6</code> or <code>kepler.ce.pdn.ac.lk</code></li>
+            <li>Turing: <code>10.40.18.8</code> or <code>turing.ce.pdn.ac.lk</code></li>
+            <li>Ampere: <code>10.40.18.10</code> or <code>ampere.ce.pdn.ac.lk</code></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 14 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14"
+        aria-expanded="false" aria-controls="collapse14" aria-label="Show how non-undergraduates can access servers">
+        I am not an undergraduate of the Department of Computer Engineering. Can I use these servers?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse14">
+    <div class="card card-body">
+        <p>Please contact <strong>headce[at]eng.pdn.ac.lk</strong> to request access.</p>
+        <p>For docker-enabled accounts on Aiken, send an email to headce[at]eng.pdn.ac.lk with your registration number. If approved, the Head of Department will forward your request to the server admin.</p>
+    </div>
+</div>
+
+<!-- 15 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15"
+        aria-expanded="false" aria-controls="collapse15" aria-label="Show how to request software installation">
+        Can I install system-wide software on the servers?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse15">
+    <div class="card card-body">
+        <p><strong>For user-level installations:</strong></p>
+        <ul>
+            <li>Use <strong>conda</strong> to install packages in your own environment (no permissions needed)</li>
+            <li>Use <strong>Singularity containers</strong> for complex software stacks (see section above)</li>
+        </ul>
+        
+        <p><strong>For system-wide installations:</strong></p>
+        <p>Please request through any <a href="https://people.ce.pdn.ac.lk/staff/academic/" target="_blank" rel="noopener">CO staff member</a>. The server admin does not have authority to install system software unless requested by a staff member.</p>
+        
+        <p>You can also post on the <strong>#ask-for-help</strong> channel on PeraCOM Discord for guidance.</p>
+    </div>
+</div>
+
+<!-- 16 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16"
+        aria-expanded="false" aria-controls="collapse16" aria-label="Show what to do if you broke something">
+        I broke something on the server. What should I do?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse16">
+    <div class="card card-body">
+        <p><strong>Don't panic!</strong> Here's what to do:</p>
+        <ol>
+            <li><strong>If not urgent:</strong> Send an email to the <a href="/network-n-servers/contact-network-admin/">CE Network Admin</a> describing what happened.</li>
+            <li><strong>If urgent:</strong> Call the CE Network Admin directly.</li>
+            <li>You can also post on the <strong>#ask-for-help</strong> channel on PeraCOM Discord.</li>
+        </ol>
+        <p>Please provide as much detail as possible: what you were doing, any error messages, and which server you were using.</p>
+    </div>
+</div>
+
+<!-- 17 -->
+<p>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17"
+        aria-expanded="false" aria-controls="collapse17" aria-label="Show what to do if question not listed">
+        My question is not listed here. What should I do?
+    </button>
+</p>
+<div class="collapse multi-collapse" id="collapse17">
+    <div class="card card-body">
+        <p>You have several options:</p>
+        <ol>
+            <li><strong>Ask on Discord:</strong> Post your question on the <strong>#ask-for-help</strong> channel on PeraCOM Discord. This helps the community as others may have the same question.</li>
+            <li><strong>Email the admin:</strong> <a href="/network-n-servers/contact-network-admin/">Contact the CE Network Admin</a></li>
+            <li><strong>Check external resources:</strong> <a href="https://www.cs.umd.edu/~gihan/resources/pdn-hpc/" target="_blank" rel="noopener">Additional HPC documentation</a></li>
+        </ol>
+        <p>If you're not on the PeraCOM Discord, request an invitation from <a href="https://faq.ce.pdn.ac.lk/peracom/discord/">here</a>.</p>
     </div>
 </div>

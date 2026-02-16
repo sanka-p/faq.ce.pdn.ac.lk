@@ -10,21 +10,18 @@ author : Adeepa
 <!--EXPAND ALL BUTTON ON TOP RIGHT CORNER
 Later add to template-->
 <p style="text-align:right">
-    <button type="button" class="btn btn-dark btn-expand-all">EXPAND ALL</button>
+    <button type="button" class="btn btn-dark btn-expand-all" aria-label="Expand or collapse all FAQ sections">EXPAND ALL</button>
 </p>
 
 <!-- 1 -->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
-        aria-expanded="false" aria-controls="collapseExample">
-        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
-            aria-expanded="false" aria-controls="collapseExample">
-            How to connect to department servers?
-        </button>
+        aria-expanded="false" aria-controls="collapse1" aria-label="Show how to connect to department servers">
+        How to connect to department servers?
+    </button>
 </p>
 <div class="collapse multi-collapse" id="collapse1">
     <div class="card card-body">
-
         <p>
             Logging into the PeraCom Department Servers using Terminal/CMD
             {% include youtubePlayer.html id="NsMzECaJYpk" %}
@@ -33,18 +30,8 @@ Later add to template-->
             Logging into the PeraCom Department Servers using MobaXterm
             {% include youtubePlayer.html id="Do5eTwXf62I" %}
         </p>
-        <p>
-            Logging into the PeraCom Department Servers using Terminal/CMD
-            {% include youtubePlayer.html id="NsMzECaJYpk" %}
-        </p>
-        <p>
-            Logging into the PeraCom Department Servers using MobaXterm
-            {% include youtubePlayer.html id="Do5eTwXf62I" %}
-        </p>
-        <p>
-        <p>If you still have issues, please mention it in the the 'ask-for-help' channel of the
+        <p>If you still have issues, please mention it in the 'ask-for-help' channel of the
             PeraCom Discord server</p>
-        </p>
     </div>
 </div>
 
@@ -52,17 +39,12 @@ Later add to template-->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
         aria-expanded="false" aria-controls="collapseExample">
-        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
-            aria-expanded="false" aria-controls="collapseExample">
-            How to automatically connect to a server without typing a password?
-        </button>
+        How to automatically connect to a server without typing a password?
+    </button>
 </p>
 <div class="collapse multi-collapse" id="collapse2">
     <div class="card card-body">
-        See <a
-            href="https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/">https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/</a>
-        See <a
-            href="https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/">https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/</a>
+        See <a href="https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/" target="_blank" rel="noopener">SSH Passwordless Login Guide</a>
     </div>
 </div>
 
@@ -70,10 +52,8 @@ Later add to template-->
 <p>
     <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
         aria-expanded="false" aria-controls="collapseExample">
-        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
-            aria-expanded="false" aria-controls="collapseExample">
-            How can I install a software package on a department server without sudo access?
-        </button>
+        How can I install a software package on a department server without sudo access?
+    </button>
 </p>
 <div class="collapse multi-collapse" id="collapse3">
     <div class="card card-body">

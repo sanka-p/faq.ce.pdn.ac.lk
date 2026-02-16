@@ -1,0 +1,59 @@
+{%- assign cardTheme = include.theme | default: "primary" -%}
+
+<div class="card mb-3 h-100 shadow-sm">
+  <div class="card-header bg-{{ cardTheme }} text-white">
+    <h5 class="mb-0">
+      <i class="bi bi-server me-2"></i>{{ include.name }}
+    </h5>
+  </div>
+  <div class="card-body">
+    {%- if include.description -%}
+    <p class="card-text text-muted mb-3">{{ include.description }}</p>
+    {%- endif -%}
+    
+    {%- if include.type -%}
+    <p class="mb-2">
+      <strong>Type:</strong> 
+      <span class="badge bg-secondary">{{ include.type }}</span>
+    </p>
+    {%- endif -%}
+    
+    {%- if include.specs -%}
+    <p class="mb-2"><strong>Key Specs:</strong></p>
+    <ul class="small mb-3">
+      {{ include.specs }}
+    </ul>
+    {%- endif -%}
+    
+    {%- if include.subdomain -%}
+    <p class="mb-2">
+      <strong>Subdomain:</strong> 
+      <code class="small">{{ include.subdomain }}</code>
+    </p>
+    {%- endif -%}
+    
+    {%- if include.publicIP or include.internalIP -%}
+    <p class="mb-2"><strong>IPs:</strong></p>
+    <ul class="small mb-2" style="list-style: none; padding-left: 0;">
+      {%- if include.publicIP -%}
+      <li><strong>Public:</strong> {{ include.publicIP }}</li>
+      {%- endif -%}
+      {%- if include.internalIP -%}
+      <li><strong>Internal:</strong> <code class="small">{{ include.internalIP }}</code></li>
+      {%- endif -%}
+    </ul>
+    {%- endif -%}
+    
+    {%- if include.status -%}
+    <p class="mb-3">
+      <strong>Status:</strong> 
+      <span class="badge bg-success">{{ include.status }}</span>
+    </p>
+    {%- endif -%}
+  </div>
+  <div class="card-footer bg-transparent border-top-0">
+    <a href="{{ include.link }}" class="btn btn-{{ cardTheme }} btn-sm w-100" aria-label="View details for {{ include.name }}">
+      View Details <i class="bi bi-arrow-right ms-1"></i>
+    </a>
+  </div>
+</div>

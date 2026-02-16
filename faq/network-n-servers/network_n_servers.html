@@ -7,47 +7,243 @@ index: 1
 toc: false
 ---
 
-<div>
-    <ul>
-        <li><a href="./general-questions/">FAQ about all servers in general</a></li>
-        <li><a href="./connect_to_servers/">Connect to servers</a></li>
-        <li><a href="./connect_to_department_vpn/">Connect to Department VPN</a></li>
-        <li><a href="./connect-to-fpga-license-server/">Connect to FPGA License Server through VPN</a></li>
-        <li><a href="./connect-to-fpga-license-server-through-ssh-tunnel/">Connect to FPGA License Server through a SSH
-                Tunnel</a></li>
-        <li><a href="./Use-Jupyter-Notebook-on-Kepler-Turing-Servers/">Use Jupyter Notebook on Kepler/Turing Servers</a></li>
-    </ul>
-
-    <ul>
-        <li><a href="./contact-network-admin/">Contact Network Admin</a></li>
-    </ul>
+<div class="row g-3 mb-5">
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-question-circle"></i>General Questions
+                </h5>
+                <p class="card-text small text-muted">Common questions about all servers, conda setup, package installation, and more.</p>
+                <a href="./general-questions/" class="btn btn-outline-primary btn-sm">Learn More</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-plug"></i>Connect to Servers
+                </h5>
+                <p class="card-text small text-muted">SSH connection tutorials using Terminal, CMD, and MobaXterm.</p>
+                <a href="./connect_to_servers/" class="btn btn-outline-primary btn-sm">Connect Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-shield-lock"></i>Department VPN
+                </h5>
+                <p class="card-text small text-muted">Setup guide for connecting to CE Department VPN from anywhere.</p>
+                <a href="./connect_to_department_vpn/" class="btn btn-outline-primary btn-sm">Setup VPN</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-cpu"></i>FPGA License (VPN)
+                </h5>
+                <p class="card-text small text-muted">Connect to FPGA License Server through Department VPN.</p>
+                <a href="./connect-to-fpga-license-server/" class="btn btn-outline-primary btn-sm">View Guide</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-cpu"></i>FPGA License (SSH)
+                </h5>
+                <p class="card-text small text-muted">Connect to FPGA License Server through SSH Tunnel.</p>
+                <a href="./connect-to-fpga-license-server-through-ssh-tunnel/" class="btn btn-outline-primary btn-sm">View Guide</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="bi bi-journal-code"></i>Jupyter Notebooks
+                </h5>
+                <p class="card-text small text-muted">Use Jupyter Notebook on Kepler/Turing GPU Servers.</p>
+                <a href="./Use-Jupyter-Notebook-on-Kepler-Turing-Servers/" class="btn btn-outline-primary btn-sm">Setup Jupyter</a>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div>
-    <h5>FAQ about specific servers</h5>
-    <ul>
-        <li><a href="./tesla/">Tesla (Web Server)</a></li>
-        <li><a href="./aiken/">Aiken (High-performance Computing)</a></li>
-        <li><a href="./kepler/">Kepler (GPU Server)</a></li>
-        <li><a href="./turing/">Turing (New GPU Server)</a></li>
-        <li><a href="./ampere">Ampere (High-performance GPU Server 2023)</a></li>
-    </ul>
+<hr class="my-5">
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h4 class="mb-3"><i class="bi bi-server"></i>Available Servers</h4>
+        <p class="text-muted">Detailed information about each compute server in the department.</p>
+    </div>
 </div>
 
-<div>
-    <h5>Other servers</h5>
-    <ul>
-        <li>Babbage (File Server)</li>
-        <li>Winserver</li>
-        <li>FPGA</li>
-        <li>HP Worksations 1,2,3</li>
-    </ul>
+<!-- Web Servers Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h5 class="mb-3 text-primary" id="web-servers"><i class="bi bi-globe"></i> Web Servers</h5>
+        <p class="text-muted small">Servers hosting department web services and applications.</p>
+    </div>
 </div>
 
-<div>
-    <h5>Not in use</h5>
-    <ul>
-        <li>ARM</li>
-        <li>IBM</li>
-    </ul>
+<div class="row g-4 mb-5">
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Tesla"
+            description="Department web server with MySQL and Apache"
+            type="Web Server"
+            subdomain="tesla.ce.pdn.ac.lk"
+            publicIP="Yes"
+            internalIP="10.40.18.7"
+            specs="
+                <li>Intel Core i7-6700K @ 4.00GHz</li>
+                <li>32 GB Memory</li>
+                <li>Tesla C2075 GPU</li>
+            "
+            status="Active"
+            link="./tesla/"
+            theme="primary"
+        %}
+    </div>
+</div>
+
+<!-- HPC Servers Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h5 class="mb-3 text-success" id="hpc-servers"><i class="bi bi-cpu-fill"></i> HPC Servers</h5>
+        <p class="text-muted small">High-performance computing servers optimized for CPU-intensive parallel computations.</p>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Aiken"
+            description="High-performance computing server for CPU-intensive tasks"
+            type="HPC Server"
+            subdomain="aiken.ce.pdn.ac.lk"
+            publicIP="Yes"
+            internalIP="10.40.18.5"
+            specs="
+                <li>Intel Xeon E5-2670 @ 2.60GHz</li>
+                <li>256 GB RAM</li>
+                <li>32 Threads</li>
+            "
+            status="Active"
+            link="./aiken/"
+            theme="success"
+        %}
+    </div>
+</div>
+
+<!-- GPU Servers Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h5 class="mb-3 text-info" id="gpu-servers"><i class="bi bi-lightning-charge-fill"></i> GPU Servers</h5>
+        <p class="text-muted small">GPU-accelerated servers for deep learning, machine learning, and parallel computing workloads.</p>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Kepler"
+            description="GPU server for deep learning with pre-installed datasets"
+            type="GPU Server"
+            subdomain="kepler.ce.pdn.ac.lk"
+            publicIP="No"
+            internalIP="10.40.18.6"
+            specs="
+                <li>Tesla K40c GPU</li>
+                <li>Quadro K620 GPU</li>
+                <li>Ubuntu 20.04</li>
+            "
+            status="Active"
+            link="./kepler/"
+            theme="info"
+        %}
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Turing"
+            description="New GPU server with RTX 3090 Ti for advanced ML workloads"
+            type="GPU Server"
+            subdomain="turing.ce.pdn.ac.lk"
+            publicIP="No"
+            internalIP="10.40.18.8"
+            specs="
+                <li>Intel Core i9-13900K</li>
+                <li>RTX 3090 Ti GPU</li>
+                <li>32 GB DDR5-6000</li>
+            "
+            status="Active"
+            link="./turing/"
+            theme="info"
+        %}
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Ampere"
+            description="High-performance dual-GPU server for demanding computations"
+            type="HPC GPU Server"
+            subdomain="ampere.ce.pdn.ac.lk"
+            publicIP="No"
+            internalIP="10.40.18.10"
+            specs="
+                <li>2x Intel Xeon 4215R</li>
+                <li>2x RTX A6000 48GB</li>
+                <li>128 GB DDR4</li>
+            "
+            status="Active"
+            link="./ampere/"
+            theme="info"
+        %}
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        {% include server-card.html
+            name="Ada"
+            description="High-performance triple-GPU server for demanding computations"
+            type="HPC GPU Server"
+            subdomain="ada.ce.pdn.ac.lk"
+            publicIP="No"
+            internalIP="10.40.18.12"
+            specs="
+                <li>2x Intel Xeon 4215R</li>
+                <li>2x RTX A6000 48GB</li>
+                <li>128 GB DDR4</li>
+            "
+            status="Active"
+            link="./ada/"
+            theme="info"
+        %}
+    </div>
+</div>
+
+<div class="mt-5 p-4 bg-light border-top border-primary border-3">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <h5 class="mb-2">
+                <i class="bi bi-info-circle text-primary"></i>Need Help?
+            </h5>
+            <p class="mb-0 text-muted">Contact the network administrator for server access, issues, or questions.</p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <a href="./contact-network-admin/" class="btn btn-primary">Contact Admin</a>
+        </div>
+    </div>
 </div>
